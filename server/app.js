@@ -47,7 +47,7 @@ if (fs.existsSync('/opt/nlu-service-bind/binding')) {
 
 application.get("/", function (req, response) {
   response.json({
-    'message': 'Welcome to Snap and Translate app.'
+    'message': 'Welcome to Visual Verse app.'
   })
 });
 
@@ -111,8 +111,7 @@ application.post("/uploadpic", function (req, result) {
       });
     }
   });
-}); 
-//connection to the port 3000
+});
 const port = process.env.PORT || process.env.VCAP_APP_PORT || 3000;
 application.listen(port, function () {
   console.log("Server running on port: %d", port);
