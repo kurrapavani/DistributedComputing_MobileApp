@@ -27,7 +27,6 @@ When the reader has completed this Code Pattern, they will understand how to:
 * [Tesseract OCR](https://github.com/tesseract-ocr/): An open-source Optical Character Recognition(OCR) engine.
 
 
-
 # Steps
 
 This Code Pattern contains several pieces. The Node.js server application running on IBM Cloud Kubernetes service communicates with the Tesseract OCR, Watson Language Translator. Mobile application is built locally and runs on the Android/iOS phone.
@@ -45,13 +44,13 @@ This Code Pattern contains several pieces. The Node.js server application runnin
 Clone the `DistributedComputing_MobileApp` repo locally. In a terminal, run:
 
 ```
-$ git clone [https://github.com/IBM/snap-and-translate.git](https://github.com/kedarSedai/DistributedComputing_MobileApp.git)
+$ git clone (https://github.com/kedarSedai/DistributedComputing_MobileApp.git)
 $ cd DistributedComputing_MobileApp
 ```
 
 ## 2. Run the server application in a container on IBM Cloud with Kubernetes
 
-Steps below will help you to deploy the `snap-and-translate/server` application into a container running on IBM Cloud, using Kubernetes.
+Steps below will help you to deploy the `DistributedComputing_MobileApp/server` application into a container running on IBM Cloud, using Kubernetes.
 
 Install the [pre-requisites](https://github.com/IBM/container-service-getting-started-wt/tree/master/Lab%200) before you begin with the steps.
 
@@ -71,7 +70,7 @@ The output of this command will contain a KUBECONFIG environment variable that m
 $ export KUBECONFIG=/Users/VisusalVerse/.bluemix/plugins/container-service/clusters/<cluster_name>/kube-config-hou02-<cluster_name>.yml
 ```
 
-* Add Language Translator & Natural Language Understanding service to your cluster
+* Add Language Translator to your cluster
 
 Add the Language Translator to your IBM Cloud account by replacing with a name for your service instance.
 
@@ -89,7 +88,7 @@ $ ibmcloud cs cluster-service-bind --cluster <cluster_name> --namespace default 
 
 Your cluster is configured and your local environment is ready for you to start deploying apps into the cluster.
 
-* Build a Docker image that includes the app files from `snap-and-translate/server` directory, and push the image to the IBM Cloud Container Registry namespace that you created. Replace `<ibmcloud_container_registry_namespace>` with IBM Cloud Container Registry namespace.
+* Build a Docker image that includes the app files from `DistributedComputing_MobileApp/server` directory, and push the image to the IBM Cloud Container Registry namespace that you created. Replace `<ibmcloud_container_registry_namespace>` with IBM Cloud Container Registry namespace.
 
 ```
 $ docker build -t registry.ng.bluemix.net/<ibmcloud_container_registry_namespace>/watsontesseract:1 .
@@ -120,7 +119,7 @@ $ ibmcloud cs workers <cluster_name>
 
 ## 3. Run the server application locally using docker
 
-### 3a. Create language translation and natural language understanding service with IBM Cloud
+### 3a. Create language translation with IBM Cloud
 
 If you do not already have a IBM Cloud account, [sign up for IBM Cloud](https://cloud.ibm.com/registration).
 Create the following services:
