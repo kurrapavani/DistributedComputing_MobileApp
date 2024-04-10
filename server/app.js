@@ -47,7 +47,7 @@ if (fs.existsSync('/opt/nlu-service-bind/binding')) {
 
 application.get("/", function (req, response) {
   response.json({
-    'message': 'Welcome to Visual Verse app.'
+    'message': 'Welcome to VisualVerse'
   })
 });
 
