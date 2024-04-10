@@ -5,8 +5,8 @@
         Snap images to recognize and translate text.
     </description>
     <preference name="android-targetSdkVersion" value="23" />
-    <author email="riyamaro@in.ibm.com" href="http://cordova.io">
-        Riya Mary Roy
+    <author href="http://cordova.io">
+            VisualVerse
     </author>
     <content src="index.html" />
     <access origin="*" />
