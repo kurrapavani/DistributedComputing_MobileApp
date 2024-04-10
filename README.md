@@ -73,19 +73,18 @@ $ export KUBECONFIG=/Users/VisusalVerse/.bluemix/plugins/container-service/clust
 
 * Add Language Translator & Natural Language Understanding service to your cluster
 
-Add the Language Translator & Natural Language Understanding service to your IBM Cloud account by replacing with a name for your service instance.
+Add the Language Translator to your IBM Cloud account by replacing with a name for your service instance.
 
 ```
 $ ibmcloud service create language_translator lite <service_name>
 ```
 
-* Bind the Language Translator & Natural Language Understanding instance to the default Kubernetes namespace for the cluster. Later, you can create your own namespaces to manage user access to Kubernetes resources, but for now, use the default namespace. Kubernetes namespaces are different from the registry namespace you created earlier. Replace cluster name and service instance name.
+* Bind the Language Translator to the default Kubernetes namespace for the cluster. Later, you can create your own namespaces to manage user access to Kubernetes resources, but for now, use the default namespace. Kubernetes namespaces are different from the registry namespace you created earlier. Replace cluster name and service instance name.
 
 > NOTE: when services are bound you will see a secret name for each, take note of these as we'll need them later.
 
 ```
 $ ibmcloud cs cluster-service-bind --cluster <cluster_name> --namespace default --service <language_translate_service_name>
-$ ibmcloud cs cluster-service-bind --cluster <cluster_name> --namespace default --service <nlu_service_name>
 ```
 
 Your cluster is configured and your local environment is ready for you to start deploying apps into the cluster.
@@ -106,7 +105,6 @@ $ docker push registry.ng.bluemix.net/<ibmcloud_container_registry_namespace>/wa
 
   * Replace `<namespace>` with your IBM Cloud Container Registry namespace
   * Replace `<binding-ocrlangtranslator>` with the secret name from the bound Language Translator service
-  * Replace `<binding-ocrnlu>` with the secret name from the bound Natural Language Understanding service
 
 * Run the configuration script.
 
